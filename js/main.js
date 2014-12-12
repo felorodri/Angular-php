@@ -6,7 +6,7 @@
 /**
  * Main AngularJS Web Application
  */
-var app = angular.module('MyLims-app', ['ngRoute']);
+var app = angular.module('MyLims-app', ['ngRoute', 'ngResource', 'MyLims.api']);
 
 /**
  * Configure the Routes
@@ -17,6 +17,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     // Pages
+    .when("/dashboard", {templateUrl: "partials/dashboard.html", controller: "DashboardCtrl"})
+
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
